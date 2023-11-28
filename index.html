@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로메로 개객기</title>
+    <title>test</title>
 </head>
 <body>
     <h1 id="sound"></h1>
@@ -13,7 +13,7 @@
     <script>
         const getSound = async() =>{
             const name = document.getElementById('name').value;
-            const response = await fetch(`http://localhost:3000/sound/${name}`);
+            const response = await fetch(`https://port-0-node-backend-32updzt2alphz2e2a.sel5.cloudtype.app/sound/${name}`);
             const jsonData = await response.json();
             console.log(jsonData);
             document.getElementById('sound').innerHTML = jsonData.sound;
