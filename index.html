@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로메로 개객기</title>
+</head>
+<body>
+    <h1 id="sound"></h1>
+    <input id="name" type="text">
+    <button onclick="getSound()">API 요청</button>
+
+    <script>
+        const getSound = async() =>{
+            const name = document.getElementById('name').value;
+            const response = await fetch(`http://localhost:3000/sound/${name}`);
+            const jsonData = await response.json();
+            console.log(jsonData);
+            document.getElementById('sound').innerHTML = jsonData.sound;
+        }
+    </script>
+</body>
+</html>
